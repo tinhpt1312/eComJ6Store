@@ -4,7 +4,10 @@ import java.io.Serializable;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Data
@@ -12,6 +15,9 @@ import lombok.Data;
 @Table(name = "Authorities", uniqueConstraints = {
 		@UniqueConstraint(columnNames = {"Username", "Roleid"})
 })
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Authority  implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
