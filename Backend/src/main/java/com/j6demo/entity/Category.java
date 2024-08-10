@@ -26,6 +26,8 @@ public class Category implements Serializable {
 
 	private String name;
 
+	private String image;
+	
 	@JsonIgnore
 	@OneToMany(mappedBy = "category")
 	private List<Product> products;
