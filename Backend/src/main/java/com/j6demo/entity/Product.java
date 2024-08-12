@@ -35,6 +35,9 @@ public class Product  implements Serializable {
 
 	private Integer quantity;
 
+	@Column(columnDefinition = "TEXT")
+	private String description;
+
 	@Temporal(TemporalType.DATE)
 	@Column(name = "Createdate")
 	private Date createDate = new Date();

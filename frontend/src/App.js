@@ -1,9 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
-import ProductFeatures from "./features/Product";
+import CartFeatures from "./features/Cart";
 import HomePage from "./pages/Home";
-import CategoryFeatures from "./features/Category";
+import ProductPage from "./pages/Product";
+import ProductDetailPage from "./pages/ProductDetail";
+import ShippingForm from "./components/ShippingForm";
 
 function App() {
   return (
@@ -11,9 +13,11 @@ function App() {
       <Navigation />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/product/*" element={<ProductFeatures />} />
+        <Route path="/product/*" element={<ProductPage />} />
+        <Route path="/products/:id" element={<ProductDetailPage />} />
+        <Route path="/cart" element={<CartFeatures />} />
       </Routes>
-      <CategoryFeatures />
+      {/* <ShippingForm /> */}
       <Footer />
     </div>
   );

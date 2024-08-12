@@ -11,23 +11,13 @@ function Category({ category }) {
   const imageSrc = images(`./${category.image}`);
 
   return (
-    <div className="bg-gray-100">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 xl:px-8">
-        <div className="mt-6 space-y-12 xl:grid xl:grid-cols-4 xl:gap-x-8 xl:space-y-0">
-          <div className="group relative">
-            <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 xl:aspect-h-1 xl:aspect-w-1 group-hover:opacity-75 sm:h-64">
-              <img
-                alt={category.name}
-                src={imageSrc}
-                className="h-full w-full object-cover object-center"
-              />
-            </div>
-            <p className="text-base font-semibold text-gray-900">
-              {category.name}
-            </p>
-          </div>
+    <div className="">
+      <div className="p-1 shadow-md min-h-[321px] hover:opacity-75 rounded-lg">
+        <div className="p-1 min-h-[215px] flex justify-center">
+          <img src={imageSrc} alt={category.name} className="w-3/4" />
         </div>
       </div>
+      <p className="ml-7 text-lg font-bold mt-3">{category.name}</p>
     </div>
   );
 }

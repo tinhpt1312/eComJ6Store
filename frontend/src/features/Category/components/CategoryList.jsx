@@ -1,20 +1,26 @@
-import React from "react";
 import PropTypes from "prop-types";
-import Category from "./Category";
+import React from "react";
+
+const images = require.context("../../../assets/image/product", true);
 
 CategoryList.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.array.isRequired,
+  onSelectCategory: PropTypes.func.isRequired,
 };
 
-function CategoryList({ data }) {
+function CategoryList({ data, onSelectCategory }) {
   return (
-    <div>
+    <div className="grid bg-white">
       {data.map((category) => (
-        <div key={category.id}>
-          <div className="">
-            <Category category={category} />
-          </div>
-        </div>
+        <button
+          key={category.id}
+          className="p-3 bg-white shadow-sm hover:bg-gray-200"
+          onClick={() => onSelectCategory(category.id)}
+        >
+          <p className="ml-7 text-start text-sm font-semibold">
+            {category.name}
+          </p>
+        </button>
       ))}
     </div>
   );

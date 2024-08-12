@@ -20,8 +20,12 @@ function ListPage() {
   }, []);
 
   return (
-    <div>
-      <CategoryList data={category} />
+    <div className="container mx-auto my-10">
+      <div className="">
+        <h1 className="text-2xl ml-10 font-bold mb-4">Category</h1>
+        <CategoryList data={category} />
+        <hr className="mt-10 border-t-2 border-gray-900" />
+      </div>
     </div>
   );
 }
